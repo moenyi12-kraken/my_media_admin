@@ -71,7 +71,7 @@
                                 @foreach ($posts as $item)
                                     <tr>
                                         <td>{{ $item->id }}</td>
-                                        <td>{{ $item->title }}</td>
+                                        <td>{{ Str::words($item->title, 10, '...') }}</td>
                                         <td><img src="{{ asset($item->image != null ? '/postImage/' . $item->image : '/default/default.jpg') }}"
                                                 style="width:100px"></td>
                                         <td>

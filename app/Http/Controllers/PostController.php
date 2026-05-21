@@ -80,8 +80,11 @@ class PostController extends Controller
 
             $oldImage     = Post::select('image')->where('id', $id)->first();
             $oldImageName = $oldImage->image;
-            if (public_path('postImage/' . $oldImageName)) {
-                unlink(public_path('postImage/' . $oldImageName));
+            // if (public_path('postImage/' . $oldImageName)) {
+            //     unlink(public_path('postImage/' . $oldImageName));
+            // }
+            if (File::exists(public_path('postImage/' . $oldImageName))) {
+                File::delete(public_path('postImage/' . $oldImageName));
             }
 
             $data['image'] = $this->saveImageProcess($request);

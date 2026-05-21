@@ -91,7 +91,7 @@
                                 @csrf
                                 <button class="nav-link bg-danger">
                                     <i class="fas fa-sign-out-alt"></i>
-                                    Logout
+                                    <p>Logout</p>
                                 </button>
                             </form>
                         </li>

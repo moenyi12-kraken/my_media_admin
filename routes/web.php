@@ -16,7 +16,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {return view('admin.index');})->name('dashboard');
+    Route::get('/dashboard', function () {return to_route('admin#TrendPost');})->name('dashboard');
 
     //AdminList
     Route::get('adminList', [AdminListController::class, 'adminList'])->name('admin#AdminList');
